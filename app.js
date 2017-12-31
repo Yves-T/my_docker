@@ -1,8 +1,28 @@
-var express = require('express');
-var app = express();
-app.get('/', function(req, res) {
-  res.send('Hello World');
+const express = require('express');
+const app = express();
+
+const router = express.Router();
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const products = require('./routes/products');
+const PORT = 3000;
+
+mongoose.Promise = require('bluebird');
+
+// REQUIRE MIDDLEWARE
+
+mongoose.connect('mongodb://mongo:27017/mongocrud');
+
+app.use(bodyParser.json()); // add body parser
+
+router.get('/hello', function(req, res) {
+  res.send('Hello World!!');
 });
-app.listen(3000, function() {
-  console.log('Example app listening on port 3000!');
+
+app.use('/products', products);
+
+app.use(router);
+
+app.listen(PORT, () => {
+  console.log('started');
 });
