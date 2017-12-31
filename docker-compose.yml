@@ -1,0 +1,10 @@
+version: "2"
+services:
+  app:
+    container_name: app
+    restart: always
+    build: .
+    volumes:
+      - .:/user/src/app
+    ports:
+      - "3000:3000"
