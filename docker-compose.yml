@@ -4,10 +4,13 @@ services:
     container_name: app
     restart: always
     build: .
+    command: yarn start
     volumes:
       - .:/user/src/app
     ports:
       - "3000:3000"
+      - "5858:5858"
+      - "9229:9229"
     links:
       - mongo
     depends_on:
