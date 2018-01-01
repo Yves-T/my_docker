@@ -27,3 +27,14 @@ Get the products back with
 ```
 curl -i -H "Accept: application/json" localhost:3000/products
 ```
+
+## Health check
+
+This image makes use of docker healtz.
+
+Check the status with
+
+```
+docker ps
+docker inspect --format='{{json .State.Health}}' your-container-name
+```
