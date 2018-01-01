@@ -7,5 +7,5 @@ COPY ["package.json", "npm-shrinkwrap.json*", "yarn.lock" , "./"]
 RUN yarn install
 RUN cd /user/src/app && yarn
 COPY .  /user/src/app
-EXPOSE 3000
+EXPOSE 3000 5858 9229
 CMD ["yarn", "start"]
