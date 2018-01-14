@@ -33,3 +33,5 @@ app.use(router);
 app.listen(PORT, () => {
   console.log('started');
 });
+
+module.exports = app;
