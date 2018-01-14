@@ -1,10 +1,11 @@
 {
   "name": "docker_yarn",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "app.js",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon --inspect=0.0.0.0:9229 ./app.js"
+    "start": "node ./app.js",
+    "dev": "nodemon --inspect=0.0.0.0:9229 ./app.js"
   },
   "dependencies": {
     "express": "^4.16.2"
