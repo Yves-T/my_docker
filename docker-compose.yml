@@ -1,10 +1,15 @@
-version: "3"
+version: "3.4"
+############################
+# STRICTLY FOR DEVELOPMENT #
+############################
 services:
   app:
     container_name: app
     restart: always
-    build: .
-    command: yarn start
+    build:
+      context: .
+      dockerfile: df.dev
+    command: ["yarn", "run", "dev"]
     volumes:
       - .:/user/src/app
     ports:
